@@ -5,8 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="container"></div>
+    <section>
+      <form action="" class="form" novalidate>
+        <h1>Sign Up Form</h1>
+        <!-- TODO: Add Pattern -->
+        <!-- Mail -->
+        <label for="mail" class="input_label">
+          <span>Email address:</span>
+          <input type="email" name="mail" id="mail" required minlength="8" />
+          <span class="form__error" id="mailError" aria-live="polite"></span>
+        </label>
+
+        <!-- Country -->
+        <label for="country" class="input_label">
+          <span>Country:</span>
+          <input
+            type="text"
+            name="country"
+            id="country"
+            required
+            minlength="4"
+          />
+          <span class="form__error" id="countryError" aria-live="polite"></span>
+        </label>
+
+        <!-- Zip Code -->
+        <label for="zip" class="input_label">
+          <span>Zip Code:</span>
+          <input
+            type="number"
+            name="zip"
+            id="zip"
+            required
+            minlength="4"
+            maxlength="4"
+          />
+          <span class="form__error" id="zipError" aria-live="polite"></span>
+        </label>
+
+        <!-- password -->
+        <label for="pw" class="input_label">
+          <span>Password:</span>
+          <input type="password" name="pw" id="pw" required minlength="8" />
+          <span class="form__error" id="pwError" aria-live="polite"></span>
+        </label>
+
+        <!-- confirm password -->
+        <label for="confirmPw" class="input_label">
+          <span>Confirm Password:</span>
+          <input
+            type="password"
+            name="confirmPw"
+            id="confirmPw"
+            required
+            minlength="8"
+          />
+          <span
+            class="form__error"
+            id="confirmPwError"
+            aria-live="polite"
+          ></span>
+        </label>
+
+        <!-- submit btn -->
+        <button>Submit</button>
+      </form>
+    </section>
   </body>
 </html>
