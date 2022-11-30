@@ -1,0 +1,108 @@
+$primaryBg: #111827;
+$secondaryBg: #1f2937;
+$colorText: #d1d5d1;
+$colorHighlight: #e772ab;
+$colorButton: #37485f;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  @include flexCenter();
+  background-color: $primaryBg;
+  color: $colorText;
+}
+
+section {
+  width: fit-content;
+
+  height: auto;
+}
+
+form {
+  background-color: $secondaryBg;
+  height: 100%;
+  @include flexCenter();
+  flex-direction: column;
+  gap: 1em;
+  padding: 6em;
+  border-radius: 20px;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.input {
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 0.5em;
+}
+
+input {
+  appearance: none;
+  border: none;
+  padding: 0.5em;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+
+// form errors
+.form {
+  &__error {
+    font-size: 0.75em;
+    color: $colorHighlight;
+    white-space: wrap;
+    overflow: hidden;
+
+    max-width: 150px;
+  }
+}
+
+// Removing Number Arrows
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  appearance: none;
+  background-color: $colorButton;
+  color: $colorText;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+
+  margin-top: 1em;
+}
