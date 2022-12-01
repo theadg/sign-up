@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  <script defer src="main.js"></script></head>
+  <body>
+    <div id="container"></div>
+    <section>
+      <form action="" class="form" novalidate>
+        <h1>Sign Up Form</h1>
+        <!-- TODO: Add Pattern -->
+        <!-- Mail -->
+        <label for="mail" class="input_label">
+          <span class="input__label">Email address:</span>
+          <input
+            type="email"
+            name="mail"
+            id="mail"
+            required
+            minlength="8"
+            class="input__field"
+          />
+          <span class="form__error" id="mailError" aria-live="polite"></span>
+        </label>
+
+        <!-- Country -->
+        <label for="country" class="input_label">
+          <span class="input__label">Country:</span>
+          <input
+            type="text"
+            name="country"
+            id="country"
+            required
+            minlength="4"
+            class="input__field"
+          />
+          <span class="form__error" id="countryError" aria-live="polite"></span>
+        </label>
+
+        <!-- Zip Code -->
+        <label for="zip" class="input_label">
+          <span class="input__label">Zip Code:</span>
+          <input
+            type="text"
+            name="zip"
+            id="zip"
+            required
+            pattern="^[0-9]{5}(?:-[0-9]{4})?$"
+            minlength="5"
+            maxlength="10"
+            class="input__field"
+          />
+          <span class="form__error" id="zipError" aria-live="polite"></span>
+        </label>
+
+        <!-- password -->
+        <label for="pw" class="input_label">
+          <span class="input__label">Password:</span>
+          <input
+            class="input__field"
+            type="password"
+            name="pw"
+            id="pw"
+            required
+            minlength="8"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+          />
+          <span class="form__error" id="pwError" aria-live="polite"></span>
+        </label>
+
+        <!-- confirm password -->
+        <label for="confirmPw" class="input_label">
+          <span class="input__label">Confirm Password:</span>
+          <input
+            class="input__field"
+            type="password"
+            name="confirmPw"
+            id="confirmPw"
+            required
+            minlength="8"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+          />
+          <span
+            class="form__error"
+            id="confirmPwError"
+            aria-live="polite"
+          ></span>
+        </label>
+
+        <!-- submit btn -->
+        <button id="submit" type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
