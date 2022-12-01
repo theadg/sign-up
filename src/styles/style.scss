@@ -3,6 +3,7 @@ $secondaryBg: #1f2937;
 $colorText: #d1d5d1;
 $colorHighlight: #e772ab;
 $colorButton: #37485f;
+$colorValid: #81b29a;
 
 * {
   padding: 0;
@@ -25,8 +26,7 @@ body {
 }
 
 section {
-  width: fit-content;
-
+  width: 480px;
   height: auto;
 }
 
@@ -36,8 +36,9 @@ form {
   @include flexCenter();
   flex-direction: column;
   gap: 1em;
-  padding: 6em;
+  padding: 2em 0;
   border-radius: 20px;
+  position: relative;
 }
 
 h1 {
@@ -47,14 +48,15 @@ h1 {
 .input {
   &__label {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 label {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: max(60%, 250px);
   gap: 0.5em;
 }
 
@@ -62,10 +64,27 @@ input {
   appearance: none;
   border: none;
   padding: 0.5em;
-  border-radius: 5px;
+  transition: all 250ms ease-in-out;
+  background-color: transparent;
+  border-bottom: 2px solid $colorText;
+  color: $colorText;
+
   &:focus {
     outline: none;
   }
+
+  &:valid {
+    border-color: $colorValid;
+    background-color: transparent;
+  }
+
+  &:invalid {
+    @extend .invalid;
+  }
+}
+
+.invalid {
+  border-color: $colorHighlight !important;
 }
 
 // form errors
@@ -105,4 +124,14 @@ button {
   outline: none;
 
   margin-top: 1em;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #4d6483;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
